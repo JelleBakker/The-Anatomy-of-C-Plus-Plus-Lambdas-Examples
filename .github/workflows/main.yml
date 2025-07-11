@@ -4,13 +4,10 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up GCC
-        uses: egor-tensin/setup-gcc@v1
       
       - run: |
           cmake -B build -DCMAKE_BUILD_TYPE=Release
